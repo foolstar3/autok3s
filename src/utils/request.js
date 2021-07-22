@@ -8,6 +8,7 @@ const service = axios.create({
   baseURL: `${getRootPath()}${import.meta.env.VITE_APP_BASE_API}`,
   timeout: 30000
 })
+
 service.defaults.headers.common.Accept = 'application/json';
 service.defaults.withCredentials = true
 // request interceptor

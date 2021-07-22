@@ -40,7 +40,7 @@ export default defineComponent({
     }))
     subscribe('cluster', (msg) => {
       if (msg.resourceType === 'cluster'
-        && msg.name 
+        && msg.name
         && ['resource.change', 'resource.create', 'resource.remove'].includes(msg.name)) {
           clusterMessageHandler(msg)
       }
@@ -50,10 +50,10 @@ export default defineComponent({
       'resource.create': templateStore.action.addTemplate,
       'resource.remove': templateStore.action.removeTemplate,
     }))
-    
+
     subscribe('clusterTemplate', (msg) => {
       if (msg.resourceType === 'clusterTemplate'
-        && msg.name 
+        && msg.name
         && ['resource.change', 'resource.create', 'resource.remove'].includes(msg.name)) {
           templateMessageHandler(msg)
       }

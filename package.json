@@ -10,7 +10,8 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "start": "vite"
   },
   "dependencies": {
     "@popperjs/core": "^2.9.2",

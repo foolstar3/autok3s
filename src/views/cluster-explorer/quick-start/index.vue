@@ -47,6 +47,7 @@
   </div>
 </template>
 <script>
+// ref, toRef, toRefs, reactive 都是Vue3.0中提供的实现响应式数据的方法
 import {computed, defineComponent, inject, ref, toRef, toRefs, watch, reactive} from 'vue'
 import { useRouter } from 'vue-router'
 import PageHeader from '@/views/components/PageHeader.vue'
@@ -95,7 +96,7 @@ export default defineComponent({
     const defaultProvider = toRef(props, 'defaultProvider')
     const {loading: providerLoading, providers, error: loadProviderError} = useProviders()
     const {loading: templateLoading, error: loadTemplateError, templates} = toRefs(templateStore.state)
-    
+
     const loading = computed(() => {
       return templateLoading.value || providerLoading.value
     })
@@ -290,6 +291,7 @@ export default defineComponent({
         }
         goBack()
       } catch (err) {
+        console.log(err);
         formErrors.value = [stringify(err)]
       }
       creating.value=false

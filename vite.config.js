@@ -36,7 +36,7 @@ export default ({ command, mode }) => {
       proxy: {
         '/v1': {
           target: 'http://localhost:8080',
-          ws: true,
+          ws: true
         },
       }
     },

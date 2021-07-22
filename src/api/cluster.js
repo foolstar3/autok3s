@@ -29,6 +29,7 @@ export function fetchNodes(id) {
 }
 
 export function createCluster(data) {
+  console.log(data);
   return request({
     url: '/clusters',
     method: 'post',
