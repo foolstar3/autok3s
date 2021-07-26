@@ -33,10 +33,12 @@ export default ({ command, mode }) => {
     // base: './',
     base: process.env.UI_BASE_PATH ? process.env.UI_BASE_PATH : './',
     server: {
+      host: '0.0.0.0',
       proxy: {
         '/v1': {
           target: 'http://localhost:8080',
-          ws: true
+          ws: true,
+          // rewrite: path => path.replace(/^\/v1/, '')
         },
       }
     },

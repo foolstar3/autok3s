@@ -20,6 +20,7 @@ export default {
     const routeGroups = computed(() => {
       return currentGroup.value.children
     })
+    console.log(routeGroups);
     return {
       routeGroups,
       stateMap,

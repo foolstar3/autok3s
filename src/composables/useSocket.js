@@ -12,7 +12,6 @@ export const ERROR = 'error'
 
 
 export default function useSocket(socketUrl, eventCallback) {
-  
   if (!socketUrl) {
     throw new Error('WebSocket url is required')
   }

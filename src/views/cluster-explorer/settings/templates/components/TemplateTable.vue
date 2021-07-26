@@ -61,7 +61,7 @@
           <div>Load templates failed: {{error}}</div>
           <div>Please click <button class="btn btn-sm role-secondary" @click="reload">refresh</button> button to reload template data</div>
         </div>
-        
+
       </template>
     </k-table>
     <k-modal v-model="confirmModalVisible">

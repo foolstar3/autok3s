@@ -49,6 +49,14 @@ const exampleRouter = {
       meta: {
         title: 'Modal'
       }
+    },
+    {
+      path: 'upload',
+      name: 'Examplesupload',
+      component: () => import('@/views/examples/upload/index.vue'),
+      meta: {
+        title: 'Upload'
+      }
     }
   ]
 }

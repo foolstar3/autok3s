@@ -12,7 +12,7 @@ export default function useResourceChangeSocket(notify) {
 	// 		listeners: [{callback, synMethod}]
 	// 	}
 	// }
-  let cache = {} 
+  let cache = {}
 
   const {readyState, connect, send, disconnect} = useSocket(url, {
     open: () => {

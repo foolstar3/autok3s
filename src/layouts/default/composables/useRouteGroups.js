@@ -13,12 +13,12 @@ const buildGroup = (route, level = 0) => {
     .filter((item) => !item.hidden)
     .map((item) => buildGroup(item, level+1))
   g.children = children
-
   return g
 }
 export default function() {
   const router =  useRouter()
   const routes = router.options.routes.filter((r) => !r.hidden)
+  console.log(routes);
   const routeGroups = routes.map((route) => buildGroup(route))
   const currentGroup = computed(() => {
     const path = router.currentRoute.value.path
