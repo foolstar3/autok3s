@@ -1,7 +1,7 @@
 <template>
   <k-button class="k-kubectl-btn role-primary" @click="modalVisible=true">
-    <k-icon type="terminal"></k-icon>
-    &nbsp; Launch Kubectl
+    <!-- <k-icon type="terminal"></k-icon> -->
+    Launch Kubectl
   </k-button>
   <k-modal v-model="modalVisible">
       <template #title>Please Select A Cluster To Execute Kubectl Command</template>
@@ -9,7 +9,7 @@
         <k-select
           :loading="loading"
           label="Cluster"
-          v-model="kubectlContext" 
+          v-model="kubectlContext"
           placeholder="Please Select A Context..."
           required>
           <k-option v-for="c in contexts" :key="c.id" :value="c.id" :label="`${c.context}(${c.id})`"></k-option>
@@ -98,5 +98,6 @@ export default defineComponent({
   padding: 0 10px;
   line-height: 32px;
   min-height: 32px;
+  background: #42a85f;
 }
 </style>

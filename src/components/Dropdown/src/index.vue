@@ -11,7 +11,7 @@
 <script>
 import usePopper from '@/composables/usePopper.js'
 import useClickOutside from '@/composables/useClickOutside.js'
-import {ref, nextTick, watch, defineComponent} from 'vue'
+import { ref, nextTick, watch, defineComponent } from 'vue'
 export default defineComponent({
   name: 'KDropdown',
   props: {

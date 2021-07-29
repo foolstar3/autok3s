@@ -15,6 +15,7 @@ import { BaseTable, TableColumn, Table } from './Table'
 import { Tabs, TabPane } from './Tabs'
 import Tag from './Tag'
 import Tooltip from './Tooltip'
+import Upload from './Upload'
 
 const components = [
   Alert,
@@ -43,7 +44,8 @@ const components = [
   Tabs,
   TabPane,
   Tag,
-  Tooltip
+  Tooltip,
+  Upload
 ]
 
 const install = (app) => {
@@ -79,6 +81,7 @@ export {
   Tabs,
   TabPane,
   Tag,
-  Tooltip
+  Tooltip,
+  Upload
 }
 export default { install }

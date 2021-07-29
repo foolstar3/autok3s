@@ -1,5 +1,7 @@
 import request from '@/utils/request'
 
+
+// 获取集群列表
 export function fetchList() {
   return request({
     url: '/clusters',
@@ -7,6 +9,7 @@ export function fetchList() {
   });
 }
 
+// 通过id获取集群
 export function fetchById(id) {
   return request({
     url: `/clusters/${id}`,
@@ -14,6 +17,7 @@ export function fetchById(id) {
   });
 }
 
+// 通过id删除集群
 export function remove(id) {
   return request({
     url: `/clusters/${id}`,
@@ -21,6 +25,7 @@ export function remove(id) {
   });
 }
 
+//
 export function fetchNodes(id) {
   return request({
     url: `/clusters/${id}?link=nodes`,
@@ -28,8 +33,8 @@ export function fetchNodes(id) {
   });
 }
 
+// 添加集群
 export function createCluster(data) {
-  console.log(data);
   return request({
     url: '/clusters',
     method: 'post',

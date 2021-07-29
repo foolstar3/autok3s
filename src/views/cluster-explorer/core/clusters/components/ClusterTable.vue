@@ -50,7 +50,6 @@
           <div>Load clusters failed: {{error}}</div>
           <div>Please click <button class="btn btn-sm role-secondary" @click="reload">refresh</button> button to reload cluster data</div>
         </div>
-        
       </template>
     </k-table>
     <k-modal v-model="confirmModalVisible">
@@ -160,8 +159,8 @@ export default defineComponent({
       }
       groupBy.value = 'provider'
     }
-    
-    
+
+
     const commandParams = ref([])
 
     // join node
@@ -210,6 +209,7 @@ export default defineComponent({
             return
           }
           fetchById(cluster.id).then((cluster) => {
+            console.log(providers);
             const provider = providers.value.find((p) => p.id === cluster.provider)
             const defaultVal = {
               config: Object.keys(cluster)

@@ -117,7 +117,6 @@ export default defineComponent({
   &:not(.disabled)hover {
     background: var(--input-hover-bg);
   }
-  
 }
 .k-input__label {
   grid-area: label;

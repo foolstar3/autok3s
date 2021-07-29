@@ -1,7 +1,7 @@
 
 .theme-light {
   /* start */
-  --primary: #3d98d3;
+  --primary: #3f51b5;
   --primary-text: #fff;
   --primary-hover-bg: #297db4;
   --primary-hover-text: #fff;
@@ -80,7 +80,7 @@
   --scrollbar-thumb-dropdown: #f4f5fa;
   --scrollbar-track: transparent;
 
-  --header-bg: #fff;
+  --header-bg: #5063c2;
   --header-btn-bg: #eeeff4;
   --header-btn-text: #6c6c76;
   --header-input-text: #fff;
@@ -95,6 +95,7 @@
   --nav-expander-hover: #bec1d2;
   --nav-border: #dcdee7;
   --nav-border-size: 1px;
+  --nav-dropdown: #fff;
 
   --footer-bg: transparent;
   --footer-height: 0px;

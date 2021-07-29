@@ -96,6 +96,7 @@ function changeLoading(state) {
   }
 }
 
+// 同步集群
 function syncClusters(state) {
   return () => {
     state.loading = true

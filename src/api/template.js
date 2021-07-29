@@ -1,5 +1,7 @@
 import request from '@/utils/request'
 
+
+// 获取模板列表
 export function fetchList() {
   return request({
     url: '/clusterTemplates',
@@ -7,6 +9,7 @@ export function fetchList() {
   });
 }
 
+// 通过id获取模板
 export function fetchById(id) {
   return request({
     url: `/clusterTemplates/${id}`,
@@ -14,6 +17,7 @@ export function fetchById(id) {
   });
 }
 
+// 删除模板
 export function remove(id) {
   return request({
     url: `/clusterTemplates/${id}`,
@@ -21,6 +25,7 @@ export function remove(id) {
   });
 }
 
+// 更新模板
 export function update(id, data) {
   return request({
     url: `/clusterTemplates/${id}`,
@@ -29,6 +34,7 @@ export function update(id, data) {
   });
 }
 
+// 创建模板
 export function create(data) {
   return request({
     url: '/clusterTemplates',

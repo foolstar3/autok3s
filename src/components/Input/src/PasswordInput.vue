@@ -30,7 +30,7 @@ export default defineComponent({
     onBeforeUnmount(() => {
       show.value = true
     })
-    
+
     return {
       show,
       toggleShow,

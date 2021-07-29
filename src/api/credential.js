@@ -1,5 +1,6 @@
 import request from '@/utils/request'
 
+// 获取证书列表
 export function fetchList() {
   return request({
     url: '/credentials',
@@ -7,6 +8,7 @@ export function fetchList() {
   });
 }
 
+// 创建新的证书
 export function createCredential(data) {
   return request({
     url: '/credentials',
@@ -15,6 +17,7 @@ export function createCredential(data) {
   });
 }
 
+// 更新证书
 export function updateCredential(provider, data) {
   return request({
     url: `/credentials/${provider}`,
@@ -23,6 +26,7 @@ export function updateCredential(provider, data) {
   });
 }
 
+// 通过id获取证书
 export function fetchById(id) {
   return request({
     url: `/credentials/${id}`,
@@ -30,6 +34,7 @@ export function fetchById(id) {
   });
 }
 
+// 删除证书
 export function remove(id) {
   return request({
     url: `/credentials/${id}`,

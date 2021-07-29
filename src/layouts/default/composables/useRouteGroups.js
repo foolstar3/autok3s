@@ -18,7 +18,8 @@ const buildGroup = (route, level = 0) => {
 export default function() {
   const router =  useRouter()
   const routes = router.options.routes.filter((r) => !r.hidden)
-  console.log(routes);
+  // 获取router配置的routes，并根据routes给sider生成导航栏
+  // console.log(routes);
   const routeGroups = routes.map((route) => buildGroup(route))
   const currentGroup = computed(() => {
     const path = router.currentRoute.value.path

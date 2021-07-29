@@ -15,12 +15,13 @@ import useRouteGroupState from '../composables/useRouteGroupState.js'
 import { computed } from 'vue'
 export default {
   setup() {
+    // 根据路由动态生成导航栏
     const { routeGroups: rootRouteGroups, currentGroup } = useRouteGroups()
     const {stateMap, toggleOpenState} = useRouteGroupState(rootRouteGroups)
     const routeGroups = computed(() => {
       return currentGroup.value.children
     })
-    console.log(routeGroups);
+    // console.log(routeGroups);
     return {
       routeGroups,
       stateMap,

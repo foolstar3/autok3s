@@ -16,6 +16,7 @@
         <div>pane 2</div>
       </k-tab-pane>
     </k-tabs>
+    <k-tag>123</k-tag>
   </div>
 </template>
 <script>

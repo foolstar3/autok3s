@@ -1,7 +1,8 @@
 <template>
 <teleport to="body">
   <div class="k-notification" :class="positionClass">
-    <div v-for="item in events" :key="item.id">
+    <transition-group tag="notification" name="list">
+      <div v-for="item in events" :key="item.id">
       <slot name="body" :event="item">
         <div class="k-notification__content" :class="[`k-notification--${item.type}`]">
           <div class="k-notification__title">{{item.title}}</div>
@@ -11,11 +12,12 @@
         </div>
       </slot>
     </div>
+     </transition-group>
   </div>
 </teleport>
 </template>
 <script>
-import { computed, inject, defineComponent } from 'vue'
+import { computed, inject, defineComponent, reactive } from 'vue'
 import KIcon from '@/components/Icon'
 export default defineComponent({
   name: 'KNotification',
@@ -34,6 +36,7 @@ export default defineComponent({
     }
   },
   setup(props) {
+    const show = reactive(false)
     const positionClass = computed(() => {
       if (typeof props.position === 'string') {
         return [`k-notification--${props.position.split(/\s+/gi).join('-')}`]
@@ -60,6 +63,22 @@ export default defineComponent({
 })
 </script>
 <style>
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
+}
+​
+.list-enter-to,
+.list-leave-from {
+  opacity: 1;
+}
+
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.3s ease;
+}
+
 .k-notification {
   position: fixed;
   display: grid;
@@ -126,12 +145,12 @@ export default defineComponent({
   border-left-color: #f48a06;
 }
 .k-notification--success {
-  background-color: #68cd86;
+  background-color: #00c653;
   color: #fff;
   border-left-color: #42a85f;
 }
 .k-notification--error {
-  background: #e54d42;
+  background: #ef5350;
   color: #fff;
   border-left-color: #b82e24;
 }

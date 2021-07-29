@@ -105,5 +105,6 @@ export default {
 }
 .k-dropdown-nav__title {
   text-overflow: ellipsis;
+  color: var(--nav-dropdown);
 }
 </style>

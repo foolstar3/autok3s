@@ -109,7 +109,17 @@ const clusterExplorerRouter = {
         hidden: true,
       },
     ],
-    }
+    },
+    {
+      path: 'deploy',
+      component: () => import('@/views/cluster-explorer/deploy/index.vue'),
+      name: 'Deploy',
+      // props: (route) => ({
+      //   templateId: route.query.templateId,
+      //   defaultProvider: route.query.defaultProvider,
+      // }),
+      meta: { title: 'Deploy' }
+    },
   ],
 }
 

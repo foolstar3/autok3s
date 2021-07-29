@@ -10,7 +10,7 @@
     <div class="k-select__prefix" v-if="$slots.prefix">
       <slot name="prefix">{{prefix}}</slot>
     </div>
-    <dropdown class="k-select__trigger" :option="popperOption" :append-to-body="false" :disabled="disabled" :lazy="false">
+    <dropdown class="k-select__trigger" :option="popperOption" :append-to-body="false" :disabled="disabled" :lazy="false" ref="dropDown">
       <div v-if="multiple" class="k-select__tags">
         <span class="k-select__placeholder" v-if="selectdOptions.length === 0">{{placeholder}}</span>
         <template v-else>
@@ -42,7 +42,7 @@
   </div>
 </template>
 <script>
-import {computed, defineComponent, nextTick, onMounted, provide, watch, watchEffect} from 'vue'
+import {computed, defineComponent, nextTick, onMounted, provide, inject, watch, watchEffect, ref} from 'vue'
 import {useIdGenerator} from '@/utils/idGenerator.js'
 import { Dropdown }from '@/components/Dropdown'
 import KIcon from '@/components/Icon'
@@ -105,6 +105,7 @@ export default defineComponent({
     const selectStore = useStore()
     provide('selectStore', selectStore)
     provide('multiple', props.multiple)
+    const dropDown = ref(null)
     const inputId = getId()
     const selectedLabel = computed(() => {
       return selectStore.getter.activeOption?.label
