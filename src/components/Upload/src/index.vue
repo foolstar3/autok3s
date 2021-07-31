@@ -1,11 +1,11 @@
 <template>
   <div>
-    <input type="file" :action="action" :disabled="disabled" />
-    <button type="submit">{{content}}</button>
+    <input ref="inputRef" type="file" :action="action" :disabled="disabled" />
+    <button class="role-primary" type="submit">{{content}}</button>
   </div>
 </template>
 <script>
-import { defineComponent } from 'vue';
+import { defineComponent, ref } from 'vue';
 export default defineComponent({
   name: 'KUpload',
   props: {
@@ -22,6 +22,11 @@ export default defineComponent({
       default: '提交'
     }
   },
-  setup() {},
+  setup() {
+    const inputRef = ref(null)
+    return {
+      inputRef,
+    }
+  },
 });
 </script>

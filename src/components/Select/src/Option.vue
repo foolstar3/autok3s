@@ -46,7 +46,6 @@ export default defineComponent({
       } else {
         selectStore.action.setValue(currentOption.value)
       }
-      
     }
     return {
       currentValue,

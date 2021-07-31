@@ -37,9 +37,11 @@
   <div>
     <span class="k-icon k-icon-arrow-right"></span>
   </div>
-  <k-radio label="test">test</k-radio>
-  <k-radio label="test1">test1</k-radio>
   <k-radio-group v-model="testRadio">
+    <k-radio label="test">test</k-radio>
+    <k-radio label="test1">test1</k-radio>
+  </k-radio-group>
+  <k-radio-group v-model="testRadioButton">
     <k-radio-button label="1"></k-radio-button>
     <k-radio-button label="2"></k-radio-button>
   </k-radio-group>
@@ -60,9 +62,11 @@ export default {
   setup() {
     const selectedValue = ref('v1')
     const testRadio=ref('')
+    const testRadioButton=ref('')
     return {
       selectedValue,
       testRadio,
+      testRadioButton
     }
   },
 }

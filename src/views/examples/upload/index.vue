@@ -1,17 +1,31 @@
 <template>
   <k-upload content="确认提交" action=""></k-upload>
-  <quillEditor>123</quillEditor>
+  <button @click="decrease">-</button>
+  <k-progress type="inline" :percent="percent"></k-progress>
+  <button @click="increase">+</button>
 </template>
 <script>
-import 'quill/dist/quill.core.css'
-import 'quill/dist/quill.snow.css'
-import 'quill/dist/quill.bubble.css'
-
-import { quillEditor } from 'vue-quill-editor'
+import { provide, ref } from "vue"
 export default{
-  components: {
-    quillEditor
+  props: {
+    percent: {
+      type: Number,
+    }
   },
-  setup() {},
+  setup() {
+    const percent = ref(0)
+    provide('percent',percent)
+    const increase = () => {
+      percent.value += 10
+    }
+    const decrease = () => {
+      percent.value -= 10
+    }
+    return {
+      percent,
+      increase,
+      decrease,
+    }
+  },
 };
 </script>

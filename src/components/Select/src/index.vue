@@ -10,7 +10,7 @@
     <div class="k-select__prefix" v-if="$slots.prefix">
       <slot name="prefix">{{prefix}}</slot>
     </div>
-    <dropdown class="k-select__trigger" :option="popperOption" :append-to-body="false" :disabled="disabled" :lazy="false" ref="dropDown">
+    <dropdown class="k-select__trigger" :option="popperOption" :append-to-body="false" :disabled="disabled" :lazy="false">
       <div v-if="multiple" class="k-select__tags">
         <span class="k-select__placeholder" v-if="selectdOptions.length === 0">{{placeholder}}</span>
         <template v-else>
@@ -98,14 +98,13 @@ export default defineComponent({
     desc: {
       type: String,
       default: ''
-    },
+    }
   },
   emits: ['update:modelValue', 'change'],
   setup(props, {emit, slots}) {
     const selectStore = useStore()
     provide('selectStore', selectStore)
     provide('multiple', props.multiple)
-    const dropDown = ref(null)
     const inputId = getId()
     const selectedLabel = computed(() => {
       return selectStore.getter.activeOption?.label
@@ -184,7 +183,7 @@ export default defineComponent({
   grid-template-columns: auto 1fr auto;
   grid-template-rows: auto 1fr;
   padding: 8px 8px;
-  background-color: var(--input-bg); 
+  background-color: var(--input-bg);
   border-radius: var(--border-radius);
   border: solid var(--outline-width) var(--input-border);
   color: var(--input-text);

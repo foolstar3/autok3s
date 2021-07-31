@@ -109,7 +109,7 @@ export default defineComponent({
   grid-template-columns: auto 1fr auto;
   grid-template-rows: auto 1fr;
   padding: 8px 8px;
-  background-color: var(--input-bg); 
+  background-color: var(--input-bg);
   border-radius: var(--border-radius);
   border: solid var(--outline-width) var(--input-border);
   color: var(--input-text);
@@ -144,7 +144,7 @@ export default defineComponent({
 }
 input.k-input__input, .k-input__textarea,
 input.k-input__input:hover, .k-input__textarea:hover,
-input.k-input__input:focus, .k-input__textarea:focus {
+input.k-input__input:focus, .k-input__textarea:focus  {
   grid-area: input;
   border: none;
   background-color: transparent;

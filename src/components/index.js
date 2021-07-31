@@ -9,6 +9,7 @@ import Loading from './Loading'
 import Modal from './Modal'
 import Notification from './Notification'
 import Pagination from './Pagination'
+import Progress from './Progress'
 import { Radio, RadioButton, RadioGroup } from './Radio'
 import {Select, Option} from './Select'
 import { BaseTable, TableColumn, Table } from './Table'
@@ -33,6 +34,7 @@ const components = [
   Modal,
   Notification,
   Pagination,
+  Progress,
   Radio,
   RadioButton,
   RadioGroup,
@@ -70,6 +72,7 @@ export {
   Modal,
   Notification,
   Pagination,
+  Progress,
   Radio,
   RadioButton,
   RadioGroup,

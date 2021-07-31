@@ -17,7 +17,7 @@
 </teleport>
 </template>
 <script>
-import { computed, inject, defineComponent, reactive } from 'vue'
+import { computed, inject, defineComponent, ref } from 'vue'
 import KIcon from '@/components/Icon'
 export default defineComponent({
   name: 'KNotification',
@@ -36,7 +36,7 @@ export default defineComponent({
     }
   },
   setup(props) {
-    const show = reactive(false)
+    const show = ref(false)
     const positionClass = computed(() => {
       if (typeof props.position === 'string') {
         return [`k-notification--${props.position.split(/\s+/gi).join('-')}`]
@@ -55,6 +55,7 @@ export default defineComponent({
       events,
       positionClass,
       removeEvent,
+      show
     }
   },
   components: {
